@@ -4,13 +4,21 @@
 <body>
   <div>
 
+    <p style="font-weight: bold; font-size: 1.2em">Set data to be filled</p>
     <label>
-      <p style="font-weight: bold; font-size: 1.2em">Email address to fill with:</p>
+      <p style="font-size: 1.1em">Email Address</p>
       <input type="text" id="emailToFillWith" style="width: 90%; margin-bottom: 10px">
     </label>
 
+    <label>
+      <p style="font-size: 1.1em">Street Address</p>
+      <input type="text" id="addressLine1ToFillWith" style="width: 90%; margin-bottom: 10px">
+      <input type="text" id="addressLine2ToFillWith" style="width: 90%; margin-bottom: 10px">
+      <input type="text" id="cityToFillWith" style="width: 90%; margin-bottom: 10px">
+      <input type="text" id="postcodeToFillWith" style="width: 90%; margin-bottom: 10px">
+    </label>
 
-    <div id="status"></div>
+    <div id="status" style="font-weight: bold; font-size: 1.2em; margin-bottom: 10px"></div>
     <button id="save" style="font-size: 1.1em">Save</button>
 
     <script src="options.js"></script>

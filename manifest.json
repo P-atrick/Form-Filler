@@ -1,0 +1,30 @@
+{
+  "name": "Form Filler",
+  "short_name": "FF",
+  "version": "2",
+  "manifest_version" : 2,
+  "description": "Please set your email address in this extension's options",
+  "background" : {
+    "scripts" : [
+      "jquery.js",
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["https://*/*", "http://*/*"],
+    "js" : ["jquery.js"]
+  }],
+  "browser_action": {
+    "default_icon": "logo.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false,
+    "chrome_style": true
+  }
+}

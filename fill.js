@@ -10,9 +10,6 @@ function fill() {
   $("label.instanda-question-yes-no-parent-no > input, label.instanda-question-yes-no-no > input, input[type=checkbox]").click();
 
   // Contact details
-  $("input[id*='addressline1' i]").val('Buckingham Palace');
-  $("input[id*='City']").val('London');
-  $("input[id*='postcode' i]").val('SW1A 1AA');
   $("select[id*='country' i]").val('GB');
   $("input[id*='phone' i]").val('07700900000');
 
@@ -49,9 +46,20 @@ function fill() {
 
 function fillInEmail() {
 
-  chrome.storage.local.get('email', function(result) {
-    const emailToFill = result.email;
-    $("input[type=email").val(emailToFill);
+  chrome.storage.local.get({
+    email: 'Enter_Your_Email@default.com',
+    addressLine1: 'Buckingham Palace',
+    addressLine2: '',
+    city: 'London',
+    postcode: 'SW1A 1AA'
+  }, function(result) {
+    console.log(result);
+    $("input[type=email").val(result.email);
+    $("input[id*='addressline1' i]").val(result.addressLine1);
+    $("input[id*='addressline2' i]").val(result.addressLine2);
+    $("input[id*='City']").val(result.city);
+    $("input[id*='postcode' i]").val(result.postcode);
+
   })
 
 }

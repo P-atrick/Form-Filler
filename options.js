@@ -36,7 +36,7 @@ function save_options() {
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
-  // Use default value color = 'red' and likesColor = true.
+  // Default values
   chrome.storage.local.get({
     email: 'Enter_Your_Email@default.com',
     addressLine1: 'Buckingham Palace',

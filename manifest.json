@@ -15,6 +15,7 @@
     "matches": ["https://*/*", "http://*/*"],
     "js" : ["jquery.js"]
   }],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
   "browser_action": {
     "default_icon": "logo128.png"
   },

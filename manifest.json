@@ -3,7 +3,7 @@
   "short_name": "FF",
   "version": "1.1",
   "manifest_version" : 2,
-  "description": "Please set your email address and street address in this extension's options",
+  "description": "Please set your email address and other details in this extension's options",
   "background" : {
     "scripts" : [
       "jquery.js",

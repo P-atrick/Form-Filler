@@ -7,7 +7,7 @@ function fill() {
   // Dropdowns
   $('select').prop('selectedIndex', 2);
   // Click checkboxes and the 'no' for yes no Qs
-  $("label.instanda-question-yes-no-parent-no > input, label.instanda-question-yes-no-no > input, input[type=checkbox]").click();
+  $(".instanda-unselected > input, input[type=checkbox]").click();
 
   // Contact details
   $("select[id*='country' i]").val('GB');
@@ -44,17 +44,20 @@ function fill() {
   window.scrollTo(0,document.body.scrollHeight);
 }
 
-function fillInEmail() {
+function fillInCustomDetails() {
 
   chrome.storage.local.get({
     email: 'Enter_Your_Email@default.com',
+    firstName: 'Default',
+    lastName: 'Name',
     addressLine1: 'Buckingham Palace',
     addressLine2: '',
     city: 'London',
     postcode: 'SW1A 1AA'
   }, function(result) {
-    console.log(result);
     $("input[type=email").val(result.email);
+    $("input[id=FirstName").val(result.firstName);
+    $("input[id=LastName").val(result.lastName);
     $("input[id*='addressline1' i]").val(result.addressLine1);
     $("input[id*='addressline2' i]").val(result.addressLine2);
     $("input[id*='City']").val(result.city);
@@ -66,5 +69,5 @@ function fillInEmail() {
 
 $(document).ready(function(){
   fill();
-  fillInEmail();
+  fillInCustomDetails();
 });

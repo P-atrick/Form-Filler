@@ -1,24 +1,16 @@
-// Standard Google Universal Analytics code
-
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-115746595-2', 'auto');
-ga('set', 'checkProtocolTask', function(){});
-ga('require', 'displayfeatures');
-ga('send', 'pageview', '/options.html');
-
-
 // Saves options to chrome.storage
 function save_options() {
   var emailToFillWith = document.getElementById('emailToFillWith').value;
+  var firstNameToFillWith = document.getElementById('firstNameToFillWith').value;
+  var lastNameToFillWith = document.getElementById('lastNameToFillWith').value;
   var addressLine1ToFillWith = document.getElementById('addressLine1ToFillWith').value;
   var addressLine2ToFillWith = document.getElementById('addressLine2ToFillWith').value;
   var cityToFillWith = document.getElementById('cityToFillWith').value;
   var postcodeToFillWith = document.getElementById('postcodeToFillWith').value;
   chrome.storage.local.set({
     email: emailToFillWith,
+    firstName: firstNameToFillWith,
+    lastName: lastNameToFillWith,
     addressLine1: addressLine1ToFillWith,
     addressLine2: addressLine2ToFillWith,
     city: cityToFillWith,
@@ -39,12 +31,16 @@ function restore_options() {
   // Default values
   chrome.storage.local.get({
     email: 'Enter_Your_Email@default.com',
+    firstName: 'Default',
+    lastName: 'Name',
     addressLine1: 'Buckingham Palace',
     addressLine2: '',
     city: 'London',
     postcode: 'SW1A 1AA'
   }, function(items) {
     document.getElementById('emailToFillWith').value = items.email;
+    document.getElementById('firstNameToFillWith').value = items.firstName;
+    document.getElementById('lastNameToFillWith').value = items.lastName;
     document.getElementById('addressLine1ToFillWith').value = items.addressLine1;
     document.getElementById('addressLine2ToFillWith').value = items.addressLine2;
     document.getElementById('cityToFillWith').value = items.city;

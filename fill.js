@@ -12,9 +12,9 @@ function fill() {
   // Contact details
   $("select[id*='country' i]").val('GB');
   $("input[id*='phone' i]").val('07700900000');
-  
+
   // Zip code
-  $("input[id*='zipCode']").val('60610');
+  $("input[id*='zipCode i']").val('60610');
 
   // Number inputs
   $(".instanda-number-input input[data-val-minimum-value]:visible").each(function() {

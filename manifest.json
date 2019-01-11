@@ -1,7 +1,7 @@
 {
   "name": "Form Filler",
   "short_name": "FF",
-  "version": "1.11",
+  "version": "1.13",
   "manifest_version" : 2,
   "description": "Please set your email address and other details in this extension's options",
   "background" : {
